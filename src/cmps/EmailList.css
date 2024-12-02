@@ -1,0 +1,47 @@
+.email-list {
+    max-width: 800px; /* Define the container width */
+    margin: 0; /* Align the list to the left */
+    font-family: Arial, sans-serif;
+}
+
+.email-preview:hover {
+    background-color: #f5f5f5;
+}
+
+.email-sender {
+    flex: 1;
+    font-weight: bold;
+    color: #2c3e50;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.email-date {
+    flex: 0 0 70px;
+    text-align: right;
+    color: #999;
+    margin-left: 10px;
+    overflow: hidden; /* Prevent overflowing date */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.email-subject {
+    flex: 2;
+    font-weight: bold;
+    color: #34495e;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+}
+
+.email-body {
+    flex: 3;
+    color: #7f8c8d;
+    overflow: hidden; /* Hide overflowing body text */
+    white-space: nowrap; /* Keep content on one line */
+    text-overflow: ellipsis; /* Add "..." to truncated body text */
+    margin-left: 10px;
+}
