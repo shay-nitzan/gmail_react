@@ -1,0 +1,36 @@
+.sidebar {
+    background-color: #e0e0e0;
+
+    padding: 20px;
+    height: 100%;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 15px;
+}
+
+.nav-link {
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Hover and focus state */
+.nav-link:hover{
+    text-decoration: none; /* Remove underline */
+    background-color: #e0e0e0;
+}
+
+/* Active state for the current page link */
+.nav-link.active {
+    text-decoration: none; /* Remove underline */
+    background-color: #e0e0e0;
+}

@@ -1,11 +1,21 @@
 .email-preview {
     display: flex;
-    /* justify-content: space-between; */
     flex-direction: row;
     padding: 10px;
     border-bottom: 1px solid #e0e0e0;
+    background-color: #ffffff; /* Ensure the initial background is white */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: border;
+}
+
+.email-preview.read {
+    background-color: #d3d3d3; /* Dark grey for read emails */
+    color: #555; /* Dim text color */
+}
+
+.email-preview.unread {
+    background-color: #ffffff; /* White for unread emails */
+    color: #000; /* Default text color */
 }
 
 .left {
@@ -22,13 +32,14 @@
 
 .right {
     display: flex;
-    width: fit-content;
     width: 350px;
     align-self: flex-end;
 }
 
 .email-preview:hover {
-    background-color: #f5f5f5;
+    background-color: #ffffff; /* Keep the background color unchanged */
+    outline: 2px solid #c0c0c0; /* Add a gray frame */
+    border-radius: 4px; /* Optional: rounded corners */
 }
 
 .email-from {

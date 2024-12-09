@@ -1,83 +1,54 @@
-
-.email-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.email-list li {
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.email-preview {
+.email-page {
     display: flex;
-    flex-direction: column;
-    padding: 15px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border-radius: 4px;
+    height: 100vh;
 }
 
-.email-preview:hover {
-    background-color: #f1f3f4;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+.sidebar {
+    flex: 0 0 200px; 
+    background-color: #f5f5f5;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(160, 158, 158, 0.1);
 }
 
-.email-subject {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #202124;
-    margin-bottom: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.email-index {
+    flex: 1;
+    padding: 20px;
 }
 
-.email-body {
-    font-size: 0.85rem;
-    color: #5f6368;
-    margin-bottom: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.email-index h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.email-from {
-    font-size: 0.8rem;
-    color: #70757a;
+.mail-filter {
+    margin-bottom: 20px; /* Adds spacing between the filter and the list */
 }
 
-button {
-    align-self: flex-start;
-    background-color: #d93025;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-top: 10px;
+.mail-filter input {
+    width: 80%; /* Makes the input take up the full width of its container */
+    height: 25px; /* Increases the height of the input box */
+    padding: 10px; /* Adds padding inside the input box for more spacing */
+    font-size: 1rem; /* Makes the text inside the input box larger */
+    border: 1px solid #ccc; /* Optional: Adds a border to the input */
+    border-radius: 4px; /* Optional: Adds rounded corners to the input */
+    box-sizing: border-box; /* Ensures padding does not affect the width */
 }
 
-button:hover {
-    background-color: #b71c1c;
+/* Explicit hover state */
+.nav-link:hover {
+    background-color: #e0e0e0 !important; /* Light gray background on hover */
+    color: #202124 !important; /* Dark text color */
 }
 
-/* Mobile-Friendly Design */
-@media (max-width: 768px) {
-    .email-preview {
-        padding: 10px;
-    }
+/* Active state for current page link */
+.nav-link.active {
+    background-color: #d6d6d6 !important; /* Slightly darker gray background */
+    color: #202124 !important; /* Ensure text remains dark */
+}
 
-    .email-subject {
-        font-size: 0.9rem;
-    }
-
-    .email-body {
-        font-size: 0.75rem;
-    }
-
-    .email-from {
-        font-size: 0.7rem;
-    }
+/* Remove default focus outline */
+.nav-link:focus {
+    outline: none;
+    background-color: #e0e0e0 !important; /* Match hover background */
 }

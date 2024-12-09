@@ -3,7 +3,9 @@ export const utilService = {
     makeId,
     saveToStorage,
     loadFromStorage,
-    deleteFromStorage
+    deleteFromStorage,
+    debounce,
+    validateMail
 }
 
 function makeId(length = 5) {
@@ -32,4 +34,20 @@ export function loadFromStorage(key, defaultValue = null) {
 
 function deleteFromStorage(key) {
     localStorage.removeItem(key); // remove item from localStorage
+}
+
+function debounce(func, timeout = 500) {
+    let timer
+    
+    return (...args) => {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            // func.call(this, ...args)
+            func(...args)
+        }, timeout)
+    }
+}
+
+function validateMail(email) {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
 }
