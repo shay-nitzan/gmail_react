@@ -1,14 +1,7 @@
 .sidebar {
-    background-color: #e0e0e0;
-
+    background-color: #edf2fb !important;
     padding: 20px;
     height: 100%;
-}
-
-.nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .nav-item {
@@ -18,19 +11,30 @@
 .nav-link {
     text-decoration: none; /* Remove underline */
     font-size: 1rem;
-    display: block;
+    display: flex; /* Use flexbox to align icon and name horizontally */
+    align-items: center; /* Vertically align icon and name */
     padding: 10px;
     border-radius: 4px;
 }
 
-/* Hover and focus state */
-.nav-link:hover{
-    text-decoration: none; /* Remove underline */
-    background-color: #e0e0e0;
+.nav-icon {
+    width: 24px; /* Adjust the width of the icon */
+    height: 24px; /* Adjust the height of the icon */
+    margin-right: 10px; /* Space between icon and name */
 }
 
+/* Hover and focus state */
+.nav-link:hover {
+    background-color: #e0e0e0 !important; /* Light gray background on hover */
+    color: #202124 !important; /* Dark text color */
+}
 /* Active state for the current page link */
 .nav-link.active {
     text-decoration: none; /* Remove underline */
     background-color: #e0e0e0;
+}
+
+.nav-link:focus {
+    outline: none;
+    background-color: #e0e0e0 !important; /* Match hover background */
 }

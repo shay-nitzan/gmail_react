@@ -3,7 +3,7 @@ export function AppHeader() {
         <header
             className="app-header"
             style={{
-                backgroundColor: '#e0e0e0', // Or any preferred color
+                backgroundColor: '#edf2fb',
                 padding: '10px',
                 borderBottom: '1px solid #ccc',
             }}
@@ -14,5 +14,5 @@ export function AppHeader() {
                 style={{ height: '40px', marginRight: '10px' }}
             />
         </header>
-    );
+    )
 }

@@ -3,14 +3,6 @@
     height: 100vh;
 }
 
-.sidebar {
-    flex: 0 0 200px; 
-    background-color: #f5f5f5;
-    border-right: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(160, 158, 158, 0.1);
-}
-
 .email-index {
     flex: 1;
     padding: 20px;
@@ -33,22 +25,4 @@
     border: 1px solid #ccc; /* Optional: Adds a border to the input */
     border-radius: 4px; /* Optional: Adds rounded corners to the input */
     box-sizing: border-box; /* Ensures padding does not affect the width */
-}
-
-/* Explicit hover state */
-.nav-link:hover {
-    background-color: #e0e0e0 !important; /* Light gray background on hover */
-    color: #202124 !important; /* Dark text color */
-}
-
-/* Active state for current page link */
-.nav-link.active {
-    background-color: #d6d6d6 !important; /* Slightly darker gray background */
-    color: #202124 !important; /* Ensure text remains dark */
-}
-
-/* Remove default focus outline */
-.nav-link:focus {
-    outline: none;
-    background-color: #e0e0e0 !important; /* Match hover background */
 }

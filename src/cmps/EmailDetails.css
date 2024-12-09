@@ -1,0 +1,78 @@
+/* Main container */
+.email-details {
+    max-width: 800px;
+    margin: 2rem 1rem; /* Center the container while keeping content aligned left */
+    padding: 1.5rem 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff; /* White background for clean look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: left; /* Enforce left alignment for all text */
+}
+
+/* Back button */
+.email-details button {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #4285f4; /* Gmail-inspired blue */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left; /* Left-align button content */
+    transition: background-color 0.2s ease;
+}
+
+.email-details button:hover {
+    background-color: #3367d6; /* Darker blue on hover */
+}
+
+/* Subject line */
+.email-details h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #202124;
+    line-height: 1.2;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+/* Email metadata (From, To, etc.) */
+.email-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #5f6368;
+    line-height: 1.5;
+}
+
+.email-details p span {
+    font-weight: bold;
+    color: #202124;
+}
+
+/* Email body */
+.email-details .email-body {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #3c4043;
+    white-space: pre-line; /* Preserve line breaks */
+}
+
+/* Sent timestamp */
+.email-details small {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #70757a;
+}
+
+/* Remove centering or spacing adjustments */
+.email-details * {
+    margin-left: 0; /* Ensure no unintended offsets */
+    padding-left: 0; /* Eliminate left-padding across all elements */
+    text-align: left; /* Guarantee strict left alignment */
+}

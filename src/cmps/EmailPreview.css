@@ -1,6 +1,8 @@
+
 .email-preview {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #e0e0e0;
     background-color: #ffffff; /* Ensure the initial background is white */
@@ -9,18 +11,19 @@
 }
 
 .email-preview.read {
-    background-color: #d3d3d3; /* Dark grey for read emails */
+    background-color: #edf2fb; /* Dark grey for read emails */
     color: #555; /* Dim text color */
 }
 
 .email-preview.unread {
     background-color: #ffffff; /* White for unread emails */
+    font-weight: bold;
     color: #000; /* Default text color */
 }
 
 .left {
-    flex-basis: 168px;
-    max-width: 168px;
+    flex-basis: 260px;
+    max-width: 260px;
     padding-right: 32px;
 }
 
@@ -37,15 +40,29 @@
 }
 
 .email-preview:hover {
-    background-color: #ffffff; /* Keep the background color unchanged */
     outline: 2px solid #c0c0c0; /* Add a gray frame */
     border-radius: 4px; /* Optional: rounded corners */
 }
 
+/* Star Icon */
+.star-section {
+    margin-right: 10px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+/* Style the star icon */
+.star-icon {
+    width: 24px;
+    height: 24px;
+}
+
 .email-from {
+    padding-left: 48px;
     flex: 1;
     font-size: 0.9rem;
-    font-weight: 600;
+    /* font-weight: 600; */
     color: #202124;
     white-space: nowrap;
     overflow: hidden;
@@ -56,7 +73,7 @@
 .email-subject {
     flex: 2;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #202124;
     white-space: nowrap;
     overflow: hidden;
@@ -79,18 +96,4 @@
     font-size: 0.8rem;
     color: #5f6368;
     text-align: right;
-}
-
-/* Mobile-Friendly Design */
-@media (max-width: 768px) {
-    .email-preview {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px;
-    }
-
-    .email-from, .email-subject, .email-body, .email-date {
-        flex: none;
-        margin-bottom: 5px;
-    }
 }

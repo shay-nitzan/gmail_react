@@ -9,12 +9,11 @@ export const emailService = {
     getEmptyMail,
     getDefaultFilter,
     getDefaultSort,
-    isFiltered,
     getEmailsByText,
-    // getFolders,
     filterMails,
     updateEmail,
-    convertFilterIsRead
+    convertFilterIsRead,
+    getEmailById,
 }
 
 const STORAGE_KEY = 'emails'
@@ -114,38 +113,6 @@ function _createEmails() {
 }
 }
 
-
-function isFiltered(email, filterBy) {
-    // Inbox: Emails sent **to** 'shay@gmail.com'
-    if (filterBy.status === 'inbox') {
-        return email.to !== loggedinUser.email || email.removedAt !== null;
-    }
-
-    // Sent: Emails sent **from** 'shay@gmail.com'
-    if (filterBy.status === 'sent') {
-        return email.from !== loggedinUser.email;
-    }
-
-    // Starred Emails
-    if (filterBy.status === 'star') {
-        return !email.isStarred;
-    }
-
-    // Trash (Deleted Emails)
-    if (filterBy.status === 'trash') {
-        return email.removedAt;
-    }
-
-    // Trash (Deleted Emails)
-    if (filterBy.status === 'draft') {
-        return email.removedAt;
-    }
-
-    // Default: Show all emails (no specific filtering)
-    return false;
-}
-
-
 async function getEmailsByText(emails, text){
 
     if(text == '')
@@ -163,11 +130,9 @@ async function getEmailsByText(emails, text){
 }
 
 async function filterMails(filterBy) {
-    console.log(filterBy.status)
     let emails = await getEmails();
 
     if (filterBy.status) {
-        console.log(filterBy.status)
         emails = _filterMailsByFolder(emails, filterBy.status)
         console.log(emails)
 
@@ -190,13 +155,11 @@ function _filterMailsByFolder(mails, status) {
     switch (status.status) {
         case 'inbox':
             mails = mails.filter(mail => (mail.to === loggedinUser.email) && !mail.removedAt)
-            console.log("shay")
             break
         case 'sent':
             mails = mails.filter(mail => (mail.from === loggedinUser.email) && !mail.removedAt)
-            console.log("shay")
             break
-        case 'starred':
+        case 'star':
             mails = mails.filter(mail => mail.isStarred && !mail.removedAt)
             break
         case 'trash':
@@ -221,6 +184,11 @@ async function updateEmail(emailId, updatedFields) {
 function convertFilterIsRead(isRead) {
     if (isRead === null) return 'all'
     return isRead ? 'read' : 'unread'
+}
+
+async function getEmailById(emailId) {
+    const emails = await getEmails(); // Adjust this to fetch all emails
+    return emails.find(email => email.id === emailId);
 }
 
 window.rs = emailService            // Easy access from console
