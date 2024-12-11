@@ -1,4 +1,3 @@
-// import imgUrl from '../assets/imgs/react.svg'
 import { NavLink } from 'react-router-dom'
 
 export function Home() {

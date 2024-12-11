@@ -1,0 +1,122 @@
+/* Variables */
+$color-border: #e0e0e0;
+$color-read-bg: #edf2fb;
+$color-unread-bg: #ffffff;
+$color-unread-text: #000;
+$color-read-text: #555;
+$color-hover-outline: #c0c0c0;
+$color-text-primary: #202124;
+$color-text-secondary: #5f6368;
+$padding-default: 10px;
+$font-size-small: 0.8rem;
+$font-size-medium: 0.9rem;
+$font-size-large: 1rem;
+
+/* Mixins */
+@mixin transition($properties) {
+  transition: $properties 0.3s ease;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+/* Main styles */
+.email-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: $padding-default;
+  border-bottom: 1px solid $color-border;
+  background-color: $color-unread-bg;
+  cursor: pointer;
+  @include transition(border);
+
+  &.read {
+    background-color: $color-read-bg;
+    color: $color-read-text;
+  }
+
+  &.unread {
+    background-color: $color-unread-bg;
+    font-weight: bold;
+    color: $color-unread-text;
+  }
+
+  &:hover {
+    outline: 2px solid $color-hover-outline;
+    @include border-radius(4px);
+  }
+
+  .left {
+    flex-basis: 260px;
+    max-width: 260px;
+    padding-right: 32px;
+  }
+
+  .middle {
+    flex-basis: 168px;
+    max-width: 168px;
+    padding-right: 32px;
+  }
+
+  .right {
+    display: flex;
+    width: 350px;
+    align-self: flex-end;
+  }
+}
+
+/* Star Icon */
+.star-section {
+    margin-right: 10px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+/* Style the star icon */
+.star-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.email-from {
+    padding-left: 48px;
+    flex: 1;
+    font-size: 0.9rem;
+    /* font-weight: 600; */
+    color: $color-text-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: flex-start;
+}
+
+.email-subject {
+    flex: 2;
+    font-size: 1rem;
+    /* font-weight: bold; */
+    color: $color-text-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+}
+
+.email-body {
+    flex: 3;
+    font-size: 0.9rem;
+    color: $color-text-secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+}
+
+.email-date {
+    flex: 0.5;
+    font-size: 0.8rem;
+    color: $color-text-secondary;
+    text-align: right;
+}

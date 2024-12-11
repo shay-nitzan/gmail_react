@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { emailService } from "../services/email.service"
-import "./EmailDetails.css";
+import "./EmailDetails.scss";
 
 export function EmailDetails() {
     const { mailId } = useParams()
